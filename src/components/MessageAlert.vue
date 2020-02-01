@@ -1,5 +1,8 @@
 <template>
-  <div id="message-alert">
+  <div
+    id="message-alert"
+    :class="variant"
+  >
     <p class="alert-text">
       message-alert
     </p>
@@ -7,19 +10,28 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class MessageAlert extends Vue {
+  @Prop() variant!: string;
 }
 </script>
 
 <style lang="scss">
 #message-alert {
-  background-color: #ffcdd2;
   height: 50px;
   margin: 1rem;
   text-align: left;
+}
+.info{
+  background-color: #b2dfdb;
+}
+.warning{
+  background-color: #fff9c4;
+}
+.error{
+  background-color: #ffcdd2;
 }
 .alert-text {
   padding: .75rem 1.25rem;
