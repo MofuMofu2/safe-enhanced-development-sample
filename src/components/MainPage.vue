@@ -3,9 +3,17 @@
   <div id="main-page">
     sample-app
     <MessageAlert
+      v-if="displayAlert"
       :variant="'info'"
-    ></MessageAlert>
-
+    />
+    <div class="toggle-alert">
+      <input
+        id="toggle-message-alert"
+        type="checkbox"
+        v-model="displayAlert"
+      >
+      <label for="checkbox">MessageAlert status is {{ displayAlert }} .</label>
+    </div>
   </div>
 </template>
 
@@ -19,5 +27,7 @@ import MessageAlert from './MessageAlert.vue';
   },
 })
 
-export default class MainPage extends Vue {}
+export default class MainPage extends Vue {
+  displayAlert: boolean = true;
+}
 </script>

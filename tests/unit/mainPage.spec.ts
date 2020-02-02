@@ -5,6 +5,6 @@ describe('MainPage.vue', ()=> {
   it('displayAlertがtrueの場合、MessageAlertを表示しない', () => {
     const wrapper = shallowMount(MainPage);
     wrapper.setData({displayAlert: true});
-    expect(wrapper.find(MainPage).attributes('message-alert')).toBe(false);
+    expect(wrapper.find(MainPage).html()).toContain('<messagealert-stub variant="info"></messagealert-stub>');
   });
 });
