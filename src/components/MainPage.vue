@@ -12,7 +12,7 @@
         type="checkbox"
         v-model="displayAlert"
       >
-      <label for="checkbox">MessageAlert status is {{ displayAlert }} .</label>
+      <label for="checkbox">Toggle MessageAlert</label>
     </div>
   </div>
 </template>
