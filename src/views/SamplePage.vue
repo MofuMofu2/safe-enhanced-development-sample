@@ -1,7 +1,6 @@
 <template>
-  <!-- テスト書きたいのでコンポーネントに検証用の物を描画 -->
-  <div id="main-page">
-    sample-app
+  <div class="about">
+    <h1>index.htmlとは別のページに同じ実装がある、みたいなシチュエーションを再現</h1>
     <MessageAlert
       v-if="displayAlert"
       :variant="'info'"
@@ -19,7 +18,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import MessageAlert from './MessageAlert.vue';
+import MessageAlert from '../components/MessageAlert.vue';
 
 @Component({
   components: {
