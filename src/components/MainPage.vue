@@ -1,16 +1,15 @@
 <template>
-  <!-- テスト書きたいのでコンポーネントに検証用の物を描画 -->
   <div id="main-page">
-    sample-app
+    <div>index.htmlとは別のページに同じ実装がある、みたいなシチュエーションを再現</div>
     <MessageAlert
-      v-if="displayAlert"
+      v-if="!displayAlert"
       :variant="'info'"
     />
     <div class="toggle-alert">
       <input
         id="toggle-message-alert"
         type="checkbox"
-        v-model="displayAlert"
+        v-model="test"
       >
       <label for="checkbox">Toggle MessageAlert</label>
     </div>
@@ -28,6 +27,9 @@ import MessageAlert from './MessageAlert.vue';
 })
 
 export default class MainPage extends Vue {
-  displayAlert: boolean = true;
+  displayAlert: boolean = false;
+  test: boolean = true;
+  
+  // どうにかして!ifにしたいけどうまくいってない
 }
 </script>
