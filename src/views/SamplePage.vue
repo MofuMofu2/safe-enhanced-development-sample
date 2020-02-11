@@ -2,8 +2,9 @@
   <div class="about">
     <h1>index.htmlとは別のページに同じ実装がある、みたいなシチュエーションを再現</h1>
     <MessageAlert
-      v-if="displayAlert"
-      :variant="'info'"
+      v-if="isCheckEnabled"
+      :variant="'warning'"
+      :text="'sample warning'"
     />
     <div class="toggle-alert">
       <input
@@ -27,6 +28,10 @@ import MessageAlert from '../components/MessageAlert.vue';
 })
 
 export default class MainPage extends Vue {
-  displayAlert: boolean = true;
+  displayAlert: boolean = false;
+
+  get isCheckEnabled(): boolean {
+    return this.displayAlert;
+  }
 }
 </script>

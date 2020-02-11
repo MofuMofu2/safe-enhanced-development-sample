@@ -4,7 +4,7 @@
     :class="variant"
   >
     <p class="alert-text">
-      message-alert
+      {{ text }}
     </p>
   </div>
 </template>
@@ -15,6 +15,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class MessageAlert extends Vue {
   @Prop() variant!: string;
+  @Prop() text!: string;
 }
 </script>
 

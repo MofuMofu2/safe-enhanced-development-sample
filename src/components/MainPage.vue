@@ -2,14 +2,28 @@
   <div id="main-page">
     <div>index.htmlとは別のページに同じ実装がある、みたいなシチュエーションを再現</div>
     <MessageAlert
-      v-if="!displayAlert"
+      v-if="displayAlert"
       :variant="'info'"
+      :text="'sample info'"
     />
     <div class="toggle-alert">
       <input
         id="toggle-message-alert"
         type="checkbox"
-        v-model="test"
+        v-model="displayAlert"
+      >
+      <label for="checkbox">Toggle MessageAlert</label>
+    </div>
+    <MessageAlert
+      v-if="isCheckEnabled"
+      :variant="'warning'"
+      :text="'sample warning'"
+    />
+    <div class="toggle-alert">
+      <input
+        id="toggle-message-alert"
+        type="checkbox"
+        v-model="displayAlert"
       >
       <label for="checkbox">Toggle MessageAlert</label>
     </div>
@@ -28,8 +42,9 @@ import MessageAlert from './MessageAlert.vue';
 
 export default class MainPage extends Vue {
   displayAlert: boolean = false;
-  test: boolean = true;
   
-  // どうにかして!ifにしたいけどうまくいってない
+  get isCheckEnabled(): boolean {
+    return this.displayAlert;
+  }
 }
 </script>
