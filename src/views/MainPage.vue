@@ -32,7 +32,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import MessageAlert from './MessageAlert.vue';
+import MessageAlert from '../components/MessageAlert.vue';
 
 @Component({
   components: {
