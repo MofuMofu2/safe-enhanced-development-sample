@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <router-link to="/sample-page">Go To Sample Page</router-link>
+    <router-link to="/sample-page">
+      Go To Sample Page
+    </router-link>
+    <router-view />
   </div>
 </template>
 
