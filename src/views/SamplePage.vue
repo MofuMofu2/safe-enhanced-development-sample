@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <h1>index.htmlとは別のページに同じ実装がある、みたいなシチュエーションを再現</h1>
+  <div id="sample-page">
+    <h1>This is sample-page.</h1>
     <MessageAlert
       v-if="isCheckEnabled"
       :variant="'warning'"
